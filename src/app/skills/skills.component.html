@@ -1,0 +1,27 @@
+<section class="bio bg-dark text-light pt-5 pb-5">
+  <div class="container">
+      <div class="row" style="text-align: center;">
+          <h2 style="text-align: center;">Skills</h2>
+          <p>{{Skills}}</p>
+      </div>
+      <div class="row">
+          <div class="col-md-4 offset-3">
+              <h3>My Focus</h3>
+             ------------------------
+              <p *ngFor="let skill of mySkills; let i = index">{{i+1}}. {{skill.skillName}}</p>
+          </div>  
+          <div class="col-md-5">
+              <div class="row mb-3" *ngFor="let skill of mySkills">
+                  <div class="bg-dark text-light" style="width: 20%; padding-left: 1%; border-radius: 5%; font-size: 18px; font-weight: bold;">{{skill.skillName}}</div>
+                  <div class="progress" style="height: 25px; padding: 0; background-color: #333;">
+                      <div class="progress-bar text-light"
+                          [ngClass]="{'bg-success' : skill.rating == 100 , 'bg-primary' : skill.rating == 75 , 'bg-warning' : skill.rating == 50 , 'bg-danger' : skill.rating <= 25,
+                          'w-100' : skill.rating == 100 , 'w-75' : skill.rating == 75, 'w-50' : skill.rating == 50 , 'w-25' : skill.rating == 25 }"
+                          style="font-size: 16px; font-weight: bold;"
+                      ></div>
+                  </div>
+              </div>
+          </div>      
+      </div>
+  </div>
+</section>

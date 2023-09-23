@@ -1,0 +1,17 @@
+<section class="projects bg-light bg-gradient text-dark pt-5 pb-5">
+    <h2 style="text-align: center;">Portfolio</h2>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-3 offset-1" *ngFor="let project of projects; let i = index">
+                <div class="card text-start text-light" [ngClass]="{'bg-secondary' : i == 0 || i % 2 == 0 , 'text-dark' : i % 2 !=0}">
+                    <img class="card-img-top" [src]="project.img" alt="Ebay">
+                    <div class="card-body">
+                        <h4 class="card-title">{{project.projectName}}</h4>
+                        <p class="card-text">{{project.projectDescription}}</p>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</section>
